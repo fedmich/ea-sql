@@ -1,0 +1,33 @@
+CREATE TABLE `price_supports` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`symbol` VARCHAR(50) NOT NULL,
+	
+	`prio` TINYINT(4) NULL DEFAULT '1',
+	
+	`last_update` TIMESTAMP NULL DEFAULT NULL,
+	`created` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	
+	`active` TINYINT(4) NULL DEFAULT '1',
+	
+	`note` VARCHAR(50) NULL DEFAULT NULL,
+	
+	`resist_1` FLOAT NULL DEFAULT NULL COMMENT 'Resistance',
+	`resist_2` FLOAT NULL DEFAULT NULL COMMENT 'Resistance',
+	`resist_3` FLOAT NULL DEFAULT NULL COMMENT 'Resistance',
+	
+	`support_1` FLOAT NULL DEFAULT NULL COMMENT 'Support',
+	`support_2` FLOAT NULL DEFAULT NULL COMMENT 'Support',
+	`support_3` FLOAT NULL DEFAULT NULL COMMENT 'Support',
+	
+	`target_1` FLOAT NULL DEFAULT NULL COMMENT 'Target',
+	`target_2` FLOAT NULL DEFAULT NULL COMMENT 'Target',
+	`target_3` FLOAT NULL DEFAULT NULL COMMENT 'Target',
+	
+	
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `symbol` (`symbol`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
