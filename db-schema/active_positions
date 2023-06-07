@@ -1,0 +1,29 @@
+CREATE TABLE `active_positions` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`symbol` VARCHAR(50) NOT NULL,
+	
+	`prio` TINYINT(4) NULL DEFAULT '1',
+	
+	`last_update` TIMESTAMP NULL DEFAULT NULL,
+	`created` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	
+	`active` TINYINT(4) NULL DEFAULT '1',
+	
+	`note` VARCHAR(50) NULL DEFAULT NULL,
+	
+	`price_now` FLOAT NULL DEFAULT NULL COMMENT '',
+	
+	`current_sell` FLOAT NULL DEFAULT NULL COMMENT 'Sell / Short',
+	`current_buy` FLOAT NULL DEFAULT NULL COMMENT 'Buy / Long',
+	`resist_3` FLOAT NULL DEFAULT NULL COMMENT 'Resistance',
+	
+	`pip_pl` FLOAT NULL DEFAULT NULL COMMENT '',
+	
+	
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `symbol` (`symbol`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
